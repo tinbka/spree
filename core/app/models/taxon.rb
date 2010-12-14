@@ -35,6 +35,7 @@ class Taxon < ActiveRecord::Base
       parent_taxon = Taxon.find(parent_id)
       self.permalink = parent_taxon.permalink + (self.permalink.blank? ? name.to_url : self.permalink.split("/").last) + "/"
     end
+    self.permalink = permalink.gsub("'", '')
   end
 
   private

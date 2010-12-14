@@ -109,7 +109,7 @@ class Product < ActiveRecord::Base
 
   def to_param
     return permalink unless permalink.blank?
-    name.to_url
+    name.to_url.gsub("'", '')
   end
 
   # returns true if the product has any variants (the master variant is not a member of the variants array)
