@@ -20,7 +20,7 @@
      }, 
      type: 'post', 
      <% url = available_admin_product_taxons_url(@product) %>
-     url: '<%= 'http://' if url[/^http:\/\//] %><%= url.sub(/^\w+:\/\//, '').split('/').map {|p| CGI.escape p}.join('/') %>'
+     url: '<%=url[/^http:\/\//]%><%= url.sub(/^\w+:\/\//, '').split('/').map {|p| CGI.escape p}.join('/') %>'
     });    
   }
   
